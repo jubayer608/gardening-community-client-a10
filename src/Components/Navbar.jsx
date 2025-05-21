@@ -4,14 +4,11 @@ import { FiMenu, FiX } from 'react-icons/fi';
 import { Link, NavLink } from 'react-router'; 
 import Swal from 'sweetalert2';
 
-
-
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
-   
   const [menuOpen, setMenuOpen] = useState(false);
   const [mobileMenu, setMobileMenu] = useState(false);
-
+  
   const handleLogOut = () => {
     logOut()
       .then(() => {
@@ -46,28 +43,20 @@ const Navbar = () => {
     <nav className="bg-green-100 shadow px-6 py-4 flex justify-between items-center font-sans relative">
       <div className="text-2xl font-bold text-green-700">
         <Link to="/">🌿 BaganBondhu</Link>
-      </div>
-
-      {/* Desktop Menu */}
+      </div> 
       <div className="hidden md:flex space-x-6 text-green-800 items-center">
         {navLinks}
       </div>
-
-      {/* Mobile Menu Icon */}
       <div className="md:hidden">
         <button onClick={() => setMobileMenu(!mobileMenu)}>
           {mobileMenu ? <FiX size={24} /> : <FiMenu size={24} />}
         </button>
       </div>
-
-      {/* Mobile Menu */}
       {mobileMenu && (
         <div className="absolute top-full left-0 w-full bg-green-50 border-t p-4 flex flex-col space-y-4 md:hidden z-50">
           {navLinks}
         </div>
       )}
-
-      {/* User Info / Login */}
       <div className="relative ml-4">
         {!user ? (
           <Link

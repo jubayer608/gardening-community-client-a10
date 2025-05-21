@@ -4,15 +4,12 @@ import { useEffect, useState } from "react";
 const TipDetails = () => {
   const { id } = useParams();
   const [tip, setTip] = useState(null);
-
-  // fetch single tip
   useEffect(() => {
     fetch(`http://localhost:3000/tips/${id}`)
       .then(res => res.json())
       .then(data => setTip(data));
   }, [id]);
 
-  // handle like
   const handleLike = () => {
     fetch(`http://localhost:3000/tips/like/${id}`, {
       method: "PATCH",
@@ -29,7 +26,6 @@ const TipDetails = () => {
   };
 
   if (!tip) return <div className="text-center py-10">Loading...</div>;
-
   return (
     <div className="max-w-4xl mx-auto p-6 font-sans bg-white shadow rounded mt-10">
       <img src={tip.image} alt={tip.title} className="w-full h-96 overflow-hidden rounded mb-6" />

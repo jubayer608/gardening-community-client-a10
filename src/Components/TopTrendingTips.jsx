@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 const TopTrendingTips = () => {
-  const [tips, setTips] = useState([]);
+const [tips, setTips] = useState([]);
 
   useEffect(() => {
     fetch('http://localhost:3000/tips')
@@ -17,7 +17,7 @@ const TopTrendingTips = () => {
   }, []);
 
   return (
-    <section className="py-12 bg-green-50 font-sans">
+    <section className="py-12 bg-green-50">
       <div className="max-w-7xl mx-auto px-4 text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-green-800 mb-8">🔥 Top Trending Tips</h2>
 

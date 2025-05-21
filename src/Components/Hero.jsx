@@ -39,10 +39,8 @@ const Hero = () => {
             <div
               className="relative w-full h-full bg-cover bg-center"
               style={{ backgroundImage: `url(${slide.image})` }}
-            >
-              {/* Overlay */}
+            >  
               <div className="absolute inset-0  bg-opacity-50 flex items-center justify-center px-4">
-                {/* Content */}
                 <div className="bg-green-100/30 backdrop-blur-sm p-6 rounded-lg text-center  max-w-xl mx-auto">
                   <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
                     <Typewriter
