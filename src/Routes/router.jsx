@@ -2,8 +2,8 @@ import { createBrowserRouter } from "react-router";
 import Root from "../layouts/Root";
 import Home from "../Components/Home";
 import AuthLayout from "../layouts/AuthLayout";
-import Login from "../Pages/Login";
-import Register from "../Pages/Register";
+// import Login from "../Pages/Login";
+// import Register from "../Pages/Register";
 import PrivateRoute from "../provider/PrivateRoute";
 import ShareTip from "../Pages/ShareTip";
 import MyTips from "../Pages/MyTips";
@@ -13,6 +13,8 @@ import NotFound from "../Pages/NotFound";
 import BrowseTips from "../Pages/BrowseTips";
 import TipDetails from "../Pages/TipDetails";
 import UpdateTip from "../Pages/UpdateTip";
+import LoginForm from "../Pages/LoginForm";
+import RegisterForm from "../Pages/RegisterForm";
 
 const router = createBrowserRouter([
   {
@@ -62,11 +64,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/auth/login",
-        element: <Login></Login>,
+        element: <LoginForm></LoginForm>,
       },
       {
         path: "/auth/register",
-        element: <Register></Register>,
+        element: <RegisterForm></RegisterForm>,
       },
     ],
   },
