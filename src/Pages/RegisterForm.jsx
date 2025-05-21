@@ -9,43 +9,50 @@ const RegisterForm = () => {
     const [nameError, setNameError] = useState("");
 
   const navigate = useNavigate();
+const handleRegister = (e) => {
+  e.preventDefault();
+  const form = e.target;
+  const name = form.name.value;
+  const photo = form.photo.value;
+  const email = form.email.value;
+  const password = form.password.value;
 
-  const handleRegister = (e) => {
-    e.preventDefault();
-    console.log(e.target);
-    const form = e.target;
-    const name = form.name.value;
-    if (name.length < 5) {
-      setNameError("Name should be more then 5 character");
-      return;
-    } else {
-      setNameError("");
-    }
-    const photo = form.photo.value;
-    const email = form.email.value;
-    const password = form.password.value;
-    // console.log({ name, photo, email, password });
-    createUser(email, password)
-      .then((result) => {
-        const user = result.user;
-        // console.log(user);
-        updateUser({ displayName: name, photoURL: photo })
-          .then(() => {
-            setUser({ ...user, displayName: name, photoURL: photo });
-            navigate("/");
-          })
-          .catch((error) => {
-            // console.log(error);
-            setUser(user);
-          });
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        alert(errorMessage, errorCode);
-        // ..
-      });
-    }
+  // Name validation
+  if (name.length < 5) {
+    setNameError("Name should be more than 5 characters");
+    return;
+  } else {
+    setNameError("");
+  }
+
+  // Password validation
+  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+  if (!passwordRegex.test(password)) {
+    alert(
+      "Password must be at least 8 characters and include at least one uppercase letter, one lowercase letter, and one special character (!@#$%^&*)."
+    );
+    return;
+  }
+
+  createUser(email, password)
+    .then((result) => {
+      const user = result.user;
+      updateUser({ displayName: name, photoURL: photo })
+        .then(() => {
+          setUser({ ...user, displayName: name, photoURL: photo });
+          navigate("/");
+        })
+        .catch((error) => {
+          setUser(user);
+        });
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      alert(errorMessage, errorCode);
+    });
+};
+
   return (
     <div className="min-h-screen bg-green-50 flex flex-col md:flex-row items-center justify-center font-sans px-4 py-12">
       
