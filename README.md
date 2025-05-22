@@ -1,49 +1,53 @@
 # 🌿 BaganBondhu - Gardening Community Platform
 
-🌐 **Live Site:** [https://your-live-site-url.com](https://your-live-site-url.com)
+Live Site: [https://your-live-site-url.netlify.app](https://your-live-site-url.netlify.app)
 
 ---
 
-## ✨ Project Features
+## ✨ Features
 
-- 🌱 User Registration & Login with Firebase Authentication
-- 📝 Users can share gardening tips with image, plant type, category, and difficulty
-- 🔐 Protected routes for posting and viewing detailed tips
-- 💚 Like button for appreciating public garden tips
-- 🎨 Dark/Light theme toggle on Home page only
-- 🌍 Responsive design with Tailwind CSS
-- ⚡ Animations with Framer Motion and Lottie React
-- 🍃 Browse tips with filtering and "See More" functionality
+- 🔐 Firebase Authentication (Email/Password/Google Login & Registration)
+- 🌱 Share Garden Tips (with image, category, difficulty, etc.)
+- ❤️ Like and View Count on Tips
+- 🏡 Homepage with 6 Trending Garden Tips
+- 🔍 Browse Tips Page with Search & Detail View
+- 🌓 Light/Dark Theme Toggle (Homepage Only)
+- ⚙️ Private & Public Route Protection
 
 ---
 
-## 🛠️ Technologies & Dependencies
+## 🧪 Tech Stack
 
-```json
-"dependencies": {
-  "@tailwindcss/vite": "^4.1.7",
-  "daisyui": "^5.0.35",
-  "dotenv": "^16.5.0",
-  "firebase": "^11.7.3",
-  "framer-motion": "^12.12.1",
-  "lottie-react": "^2.4.1",
-  "react": "^19.1.0",
-  "react-dom": "^19.1.0",
-  "react-icons": "^5.5.0",
-  "react-router": "^7.6.0",
-  "react-simple-typewriter": "^5.0.1",
-  "sweetalert2": "^11.21.2",
-  "swiper": "^11.2.6",
-  "tailwindcss": "^4.1.7"
-}
-🚀 Setup Instructions
-Clone the repo: git clone https://github.com/your-username/baganbondhu.git
+- React + Vite
+- Tailwind CSS
+- Firebase Auth
+- React Router v7
+- SweetAlert2
+- SwiperJS
+- React Icons
+- Lottie React
+- Framer Motion
+- React Simple Typewriter
+- dotenv
 
-Install dependencies: npm install
+---
 
-Create a .env file and add your Firebase config
+## 🚀 Setup Instructions
 
-Run locally: npm run dev
+```bash
+# Clone the repository
+git clone https://github.com/your-username/baganbondhu.git
 
-Visit: http://localhost:5173
+# Go into the project directory
+cd baganbondhu
 
+# Install dependencies
+npm install
+
+# Create a .env file and add your Firebase config
+# Example:
+# VITE_API_KEY=your_api_key
+# VITE_AUTH_DOMAIN=your_project.firebaseapp.com
+
+# Start the development server
+npm run dev
