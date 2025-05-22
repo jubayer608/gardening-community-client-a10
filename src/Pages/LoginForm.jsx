@@ -6,7 +6,7 @@ import { AuthContext } from "../provider/AuthProvider";
 
 const LoginForm = () => {
   const [error, setError] = useState("");
-  const { signIn } = use(AuthContext);
+  const { signIn,handleGoogle } = use(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -26,6 +26,16 @@ const LoginForm = () => {
         setError(errorCode);
       });
   };
+  const handleGoogleLogin =()=>{
+    handleGoogle()
+    .then(result=>{
+      console.log(result.user)
+      navigate(`${location.state ? location.state : "/"}`);
+    })
+    .then(error=>{
+      console.log(error)
+    })
+  }
 
   return (
     <div className="min-h-screen flex bg-green-50 items-center justify-center p-4">
@@ -87,7 +97,7 @@ const LoginForm = () => {
           <div className="my-4 text-center text-sm text-gray-500">or</div>
 
           <div className="space-y-2">
-            <button className="w-full flex items-center justify-center gap-2 border border-gray-300 py-2 rounded-md hover:bg-gray-100">
+            <button onClick={handleGoogleLogin} className="w-full flex items-center justify-center gap-2 border border-gray-300 py-2 rounded-md hover:bg-gray-100">
               <FcGoogle className="text-xl" /> Sign in with Google
             </button>
             <button className="w-full flex items-center justify-center gap-2 border border-gray-300 py-2 rounded-md hover:bg-gray-100 text-green-700">
