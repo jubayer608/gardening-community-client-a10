@@ -13,7 +13,7 @@ const BrowseTips = () => {
   useEffect(() => {
     const fetchTips = async () => {
       try {
-        const res = await fetch("http://localhost:3000/tips");
+        const res = await fetch("https://gardening-community-server-flax.vercel.app/tips");
         const data = await res.json();
 
         if (difficulty) {

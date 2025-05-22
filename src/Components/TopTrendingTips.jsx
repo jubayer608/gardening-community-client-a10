@@ -5,7 +5,7 @@ const TopTrendingTips = () => {
 const [tips, setTips] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/tips')
+    fetch('https://gardening-community-server-flax.vercel.app/tips')
       .then((res) => res.json())
       .then((data) => {
         const sortedTips = data

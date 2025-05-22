@@ -10,7 +10,7 @@ const MyTips = () => {
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:3000/tips/by-user?email=${user.email}`)
+      fetch(`https://gardening-community-server-flax.vercel.app/tips/by-user?email=${user.email}`)
         .then((res) => res.json())
         .then((data) => setMyTips(data))
         .catch((err) => console.error("Fetch error:", err));
@@ -28,7 +28,7 @@ const MyTips = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/tips/${id}`, {
+        fetch(`https://gardening-community-server-flax.vercel.app/tips/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

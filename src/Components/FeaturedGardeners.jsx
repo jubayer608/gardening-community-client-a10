@@ -10,7 +10,7 @@ const FeaturedGardeners = () => {
   const [gardeners, setGardeners] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/gardeners/active')
+    fetch('https://gardening-community-server-flax.vercel.app/gardeners/active')
       .then((res) => res.json())
       .then((data) => {
         setGardeners(data);

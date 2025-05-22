@@ -10,7 +10,7 @@ const UpdateTip = () => {
   const navigate = useNavigate();
 
   useEffect(() => {-
-    fetch(`http://localhost:3000/tips/${id}`)
+    fetch(`https://gardening-community-server-flax.vercel.app/tips/${id}`)
       .then(res => res.json())
       .then(data => setTipData(data));
   }, [id]);
@@ -29,7 +29,7 @@ const UpdateTip = () => {
       availability: form.availability.value,
     };
 
-    fetch(`http://localhost:3000/tips/${id}`, {
+    fetch(`https://gardening-community-server-flax.vercel.app/tips/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

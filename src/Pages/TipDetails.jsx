@@ -5,13 +5,13 @@ const TipDetails = () => {
   const { id } = useParams();
   const [tip, setTip] = useState(null);
   useEffect(() => {
-    fetch(`http://localhost:3000/tips/${id}`)
+    fetch(`https://gardening-community-server-flax.vercel.app/tips/${id}`)
       .then(res => res.json())
       .then(data => setTip(data));
   }, [id]);
 
   const handleLike = () => {
-    fetch(`http://localhost:3000/tips/like/${id}`, {
+    fetch(`https://gardening-community-server-flax.vercel.app/tips/like/${id}`, {
       method: "PATCH",
     })
       .then(res => res.json())

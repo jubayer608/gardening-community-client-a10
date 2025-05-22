@@ -31,7 +31,7 @@ const router = createBrowserRouter([
       {
         path:"/gardeners",
         Component:ExploreGardeners,
-        loader:()=>fetch("http://localhost:3000/gardeners"),
+        loader:()=>fetch("https://gardening-community-server-flax.vercel.app/gardeners"),
         hydrateFallbackElement:<Loading></Loading>,
       },
       {

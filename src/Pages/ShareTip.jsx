@@ -27,7 +27,7 @@ const ShareTip = () => {
       name: user?.displayName,
     };
 
-    fetch("http://localhost:3000/tips", {
+    fetch("https://gardening-community-server-flax.vercel.app/tips", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -48,9 +48,9 @@ const ShareTip = () => {
         }
       })
       .catch((error) => {
-        console.error("❌ Error submitting tip:", error);
+      
         Swal.fire({
-          icon: "error",
+          icon: {error},
           title: "Oops...",
           text: "Something went wrong!",
           footer: '<a href="#">Why do I have this issue?</a>',

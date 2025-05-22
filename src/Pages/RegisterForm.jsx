@@ -69,7 +69,7 @@ const RegisterForm = () => {
   const handleGoogleRegister = () => {
     handleGoogle()
       .then((result) => {
-        console.log(result.user);
+        // console.log(result.user);
         navigate("/");
       })
       .catch((error) => {
