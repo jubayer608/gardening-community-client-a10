@@ -1,6 +1,6 @@
 # 🌿 BaganBondhu - Gardening Community Platform
 
-Live Site: [https://my-garden-app-e56e9.web.app](https://your-live-site-url.netlify.app)
+Live Site: [https://my-garden-app-e56e9.web.app]
 
 ---
 
@@ -29,6 +29,7 @@ Live Site: [https://my-garden-app-e56e9.web.app](https://your-live-site-url.netl
 - Framer Motion
 - React Simple Typewriter
 - dotenv
+- react-tooltip
 
 ---
 

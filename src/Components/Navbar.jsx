@@ -5,11 +5,14 @@ import { Link, NavLink } from "react-router";
 import Swal from "sweetalert2";
 import { FaMoon } from "react-icons/fa";
 import { IoMdSunny } from "react-icons/io";
+import { Tooltip } from "react-tooltip";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [mobileMenu, setMobileMenu] = useState(false);
-  const [isDark, setIsDark] = useState(localStorage.getItem("isDark") === "true");
+  const [isDark, setIsDark] = useState(
+    localStorage.getItem("isDark") === "true"
+  );
 
   useEffect(() => {
     localStorage.setItem("isDark", isDark);
@@ -37,11 +40,21 @@ const Navbar = () => {
 
   const navLinks = (
     <>
-      <NavLink to="/" className="hover:underline">Home</NavLink>
-      <NavLink to="/gardeners" className="hover:underline">Explore Gardeners</NavLink>
-      <NavLink to="/browse-tips" className="hover:underline">Browse Tips</NavLink>
-      <NavLink to="/share-tip" className="hover:underline">Share a Garden Tip</NavLink>
-      <NavLink to="/my-tips" className="hover:underline">My Tips</NavLink>
+      <NavLink to="/" className="hover:underline">
+        Home
+      </NavLink>
+      <NavLink to="/gardeners" className="hover:underline">
+        Explore Gardeners
+      </NavLink>
+      <NavLink to="/browse-tips" className="hover:underline">
+        Browse Tips
+      </NavLink>
+      <NavLink to="/share-tip" className="hover:underline">
+        Share a Garden Tip
+      </NavLink>
+      <NavLink to="/my-tips" className="hover:underline">
+        My Tips
+      </NavLink>
     </>
   );
 
@@ -81,7 +94,6 @@ const Navbar = () => {
         </label>
 
         {!user ? (
-          
           <Link
             to="/auth/login"
             className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition"
@@ -90,16 +102,29 @@ const Navbar = () => {
           </Link>
         ) : (
           <div className="dropdown dropdown-end">
-            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost btn-circle avatar"
+            >
               <div className="w-10 rounded-full">
-                <img alt={user.displayName || user.name} src={user.photoURL} />
+                <img
+                  data-tooltip-id="tooltip-anchor-hide"
+                  data-tooltip-content={user.displayName}
+                  data-tooltip-delay-hide={500}
+                  alt={user.displayName || user.name}
+                  src={user.photoURL}
+                />
+                <Tooltip id="tooltip-anchor-hide" />
               </div>
             </div>
             <ul
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
-              <button className="btn bg-green-600" onClick={handleLogOut}>Logout</button>
+              <button className="btn bg-green-600" onClick={handleLogOut}>
+                Logout
+              </button>
             </ul>
           </div>
         )}
