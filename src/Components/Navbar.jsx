@@ -1,13 +1,24 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { FiMenu, FiX } from "react-icons/fi";
 import { Link, NavLink } from "react-router";
 import Swal from "sweetalert2";
+import { FaMoon } from "react-icons/fa";
+import { IoMdSunny } from "react-icons/io";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [mobileMenu, setMobileMenu] = useState(false);
-
+  const[isDark,setIsDark] = useState(
+    localStorage.getItem("isDark")==="true"
+  );
+  useEffect(()=>{
+    localStorage.setItem("isDark",isDark)
+  },[isDark])
+  const handleChange=()=>{
+    setIsDark(!isDark)
+  }
+  
   const handleLogOut = () => {
     logOut()
       .then(() => {
@@ -51,8 +62,23 @@ const Navbar = () => {
         <div className="absolute top-full left-0 w-full bg-green-50 border-t p-4 flex flex-col space-y-4 md:hidden z-50">
           {navLinks}
         </div>
+        
       )}
+      
       <div className="relative ml-4">
+       
+         <label className="swap swap-rotate mr-4">
+         <input 
+            type="checkbox"
+            className="theme-controller"
+            value="coffee"
+            onChange={handleChange}
+            checked={isDark}
+         />
+         <FaMoon className="swap-on h-6 w-6"></FaMoon>
+         <IoMdSunny className="swap-off h-6 w-6"></IoMdSunny>
+      </label>
+       
         {!user ? (
           <Link
             to="/auth/login"
@@ -72,9 +98,7 @@ const Navbar = () => {
       </div>
       <ul
         tabIndex={0}
-        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-        
-          
+        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"> 
         <button className="btn bg-green-600"  onClick={handleLogOut}>Logout</button>
       </ul>
     </div>

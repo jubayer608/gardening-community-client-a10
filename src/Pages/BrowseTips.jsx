@@ -2,32 +2,37 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router";
 
 const BrowseTips = () => {
-  const [tips, setTips] = useState([]);
+   const [tips, setTips] = useState([]);
   const [difficulty, setDifficulty] = useState("");
-
-  const fetchTips = (selectedDifficulty = "") => {
-    let url = "http://localhost:3000/tips";
-
-    if (selectedDifficulty) {
-      url += `?difficulty=${selectedDifficulty}`;
-    }
-
-    fetch(url)
-      .then(res => res.json())
-      .then(data => {
-        setTips(data); 
-      });
-  };
-
-  useEffect(() => {
-    fetchTips(); 
-  }, []);
 
   const handleFilterChange = (e) => {
     const selected = e.target.value;
     setDifficulty(selected);
-    fetchTips(selected);
   };
+
+  useEffect(() => {
+    const fetchTips = async () => {
+      try {
+        const res = await fetch("http://localhost:3000/tips");
+        const data = await res.json();
+
+        if (difficulty) {
+          const sorted = [
+            ...data.filter(tip => tip.difficulty === difficulty),
+            ...data.filter(tip => tip.difficulty !== difficulty),
+          ];
+          setTips(sorted);
+        } else {
+          setTips(data);
+        }
+      } catch (error) {
+        console.error("Error fetching tips:", error);
+      }
+    };
+
+    fetchTips();
+  }, [difficulty]);
+
 
   return (
     <section className="p-6 font-sans bg-green-50 min-h-screen">
@@ -35,10 +40,9 @@ const BrowseTips = () => {
         🌱 Browse Garden Tips
       </h2>
 
-      {/* Dropdown Filter */}
       <div className="text-center mb-4">
         <label htmlFor="difficulty" className="mr-2 text-lg font-semibold">
-          Filter by Difficulty:
+          Sort by Difficulty:
         </label>
         <select
           id="difficulty"
@@ -53,7 +57,6 @@ const BrowseTips = () => {
         </select>
       </div>
 
-      {/* Table */}
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
           <thead className="bg-green-200 text-green-900">
@@ -104,4 +107,3 @@ const BrowseTips = () => {
 };
 
 export default BrowseTips;
-
