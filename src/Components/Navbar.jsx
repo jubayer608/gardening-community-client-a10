@@ -30,12 +30,10 @@ const Navbar = () => {
       <NavLink to="/" className="hover:underline">Home</NavLink>
       <NavLink to="/gardeners" className="hover:underline">Explore Gardeners</NavLink>
       <NavLink to="/browse-tips" className="hover:underline">Browse Tips</NavLink>
-      {user && (
-        <>
-          <NavLink to="/share-tip" className="hover:underline">Share a Garden Tip</NavLink>
-          <NavLink to="/my-tips" className="hover:underline">My Tips</NavLink>
-        </>
-      )}
+       <NavLink to="/share-tip" className="hover:underline">Share a Garden Tip</NavLink>
+       <NavLink to="/my-tips" className="hover:underline">My Tips</NavLink>
+        
+      
     </>
   );
 
@@ -79,9 +77,6 @@ const Navbar = () => {
             />
             {menuOpen && (
               <div className="absolute right-0 mt-2 w-48 bg-white border rounded shadow-lg z-50">
-                <p className="px-4 py-2 text-sm text-gray-700 border-b">
-                  {user.displayName || user.name}
-                </p>
                 
                 <button
                   onClick={handleLogOut}

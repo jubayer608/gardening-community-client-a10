@@ -2,8 +2,6 @@ import { createBrowserRouter } from "react-router";
 import Root from "../layouts/Root";
 import Home from "../Components/Home";
 import AuthLayout from "../layouts/AuthLayout";
-// import Login from "../Pages/Login";
-// import Register from "../Pages/Register";
 import PrivateRoute from "../provider/PrivateRoute";
 import ShareTip from "../Pages/ShareTip";
 import MyTips from "../Pages/MyTips";
