@@ -62,30 +62,27 @@ const Navbar = () => {
             Login
           </Link>
         ) : (
-          <div
-            className="cursor-pointer relative"
-            onMouseEnter={() => setMenuOpen(true)}
-            onMouseLeave={() => setMenuOpen(false)}
-          >
-            <img
-              src={user.photoURL}
-              alt="User"
-              className="w-10 h-10 rounded-full border-2 border-green-500"
-              title={user.displayName || user.name}
-            />
-            {menuOpen && (
-              <div className="absolute right-0 mt-2 w-48 bg-white border rounded shadow-lg z-50">
-                <button
-                  onClick={handleLogOut}
-                  className="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100"
-                >
-                  Logout
-                </button>
-              </div>
+           <div className="dropdown dropdown-end">
+      <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+        <div className="w-10 rounded-full">
+          <img
+            alt={user.displayName || user.name}
+            src={user.photoURL} />
+            
+        </div>
+      </div>
+      <ul
+        tabIndex={0}
+        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+        
+          
+        <button className="btn bg-green-600"  onClick={handleLogOut}>Logout</button>
+      </ul>
+    </div>
             )}
           </div>
-        )}
-      </div>
+        
+      
     </nav>
   );
 };
