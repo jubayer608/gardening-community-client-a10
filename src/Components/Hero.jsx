@@ -5,6 +5,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
+
 const slides = [
   {
     image: 'https://i.ibb.co/7xc0ZtLB/c-z-U7-Guo-BVDJl-A-unsplash.jpg',
@@ -26,6 +27,7 @@ const slides = [
 const Hero = () => {
   return (
     <div className="w-full h-[80vh]">
+      
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation

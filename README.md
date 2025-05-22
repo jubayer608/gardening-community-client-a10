@@ -1,12 +1,52 @@
-# React + Vite
+# 🌿 GardenHub - Gardening Community Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🌐 **Live Site:** [https://your-live-site-url.com](https://your-live-site-url.com)
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Project Features
 
-## Expanding the ESLint configuration
+- 🌱 User Registration & Login with Firebase Authentication
+- 📝 Users can share gardening tips with image, plant type, category, and difficulty
+- 🔐 Protected routes for posting and viewing detailed tips
+- 💚 Like button for appreciating public garden tips
+- 🎨 Dark/Light theme toggle on Home page only
+- 🌍 Responsive design with Tailwind CSS
+- ⚡ Animations with Framer Motion and Lottie React
+- 🍃 Browse tips with filtering and "See More" functionality
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Technologies & Dependencies
+
+```json
+"dependencies": {
+  "@tailwindcss/vite": "^4.1.7",
+  "daisyui": "^5.0.35",
+  "dotenv": "^16.5.0",
+  "firebase": "^11.7.3",
+  "framer-motion": "^12.12.1",
+  "lottie-react": "^2.4.1",
+  "react": "^19.1.0",
+  "react-dom": "^19.1.0",
+  "react-icons": "^5.5.0",
+  "react-router": "^7.6.0",
+  "react-simple-typewriter": "^5.0.1",
+  "sweetalert2": "^11.21.2",
+  "swiper": "^11.2.6",
+  "tailwindcss": "^4.1.7"
+}
+
+---
+
+## 🚀 Setup Instructions
+
+1. Clone the repo: `git clone https://github.com/your-username/gardenhub.git`
+2. Install dependencies: `npm install`
+3. Create a `.env` file and add your Firebase config
+4. Run locally: `npm run dev`
+5. Visit: `http://localhost:5173`
+
+---
+
+🌟 Feel free to contribute, fork, or suggest ideas. Happy gardening!
