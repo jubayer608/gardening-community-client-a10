@@ -9,7 +9,7 @@ const UpdateTip = () => {
   const [tipData, setTipData] = useState(null);
   const navigate = useNavigate();
 
-  useEffect(() => {
+  useEffect(() => {-
     fetch(`http://localhost:3000/tips/${id}`)
       .then(res => res.json())
       .then(data => setTipData(data));
