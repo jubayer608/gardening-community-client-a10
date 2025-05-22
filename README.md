@@ -1,4 +1,4 @@
-# 🌿 GardenHub - Gardening Community Platform
+# 🌿 BaganBondhu - Gardening Community Platform
 
 🌐 **Live Site:** [https://your-live-site-url.com](https://your-live-site-url.com)
 
@@ -36,17 +36,14 @@
   "swiper": "^11.2.6",
   "tailwindcss": "^4.1.7"
 }
+🚀 Setup Instructions
+Clone the repo: git clone https://github.com/your-username/baganbondhu.git
 
----
+Install dependencies: npm install
 
-## 🚀 Setup Instructions
+Create a .env file and add your Firebase config
 
-1. Clone the repo: `git clone https://github.com/your-username/gardenhub.git`
-2. Install dependencies: `npm install`
-3. Create a `.env` file and add your Firebase config
-4. Run locally: `npm run dev`
-5. Visit: `http://localhost:5173`
+Run locally: npm run dev
 
----
+Visit: http://localhost:5173
 
-🌟 Feel free to contribute, fork, or suggest ideas. Happy gardening!
