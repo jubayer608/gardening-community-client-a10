@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 
 const RegisterForm = () => {
-     const { createUser, setUser, updateUser } = use(AuthContext);
+     const { createUser, setUser, updateUser,handleGoogle } = use(AuthContext);
     const [nameError, setNameError] = useState("");
 
   const navigate = useNavigate();
@@ -16,16 +16,12 @@ const handleRegister = (e) => {
   const photo = form.photo.value;
   const email = form.email.value;
   const password = form.password.value;
-
-  // Name validation
   if (name.length < 5) {
     setNameError("Name should be more than 5 characters");
     return;
   } else {
     setNameError("");
   }
-
-  // Password validation
   const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
   if (!passwordRegex.test(password)) {
     alert(
@@ -52,6 +48,16 @@ const handleRegister = (e) => {
       alert(errorMessage, errorCode);
     });
 };
+   const handleGoogleRegister = ()=>{
+      handleGoogle()
+      .then(result=>{
+        console.log(result.user)
+        navigate("/");
+      })
+      .catch(error=>{
+        console.log(error)
+      })
+   }
 
   return (
     <div className="min-h-screen bg-green-50 flex flex-col md:flex-row items-center justify-center font-sans px-4 py-12">
@@ -89,7 +95,7 @@ const handleRegister = (e) => {
         </div>
 
         <div className="flex gap-3">
-          <button className="flex items-center justify-center gap-2 w-full py-2 border rounded-md hover:bg-gray-100 transition">
+          <button onClick={handleGoogleRegister} className="flex items-center justify-center gap-2 w-full py-2 border rounded-md hover:bg-gray-100 transition">
             <FcGoogle size={20} /> Google
           </button>
           <button className="flex items-center justify-center gap-2 w-full py-2 border rounded-md hover:bg-gray-100 transition">

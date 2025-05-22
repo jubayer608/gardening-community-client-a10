@@ -32,7 +32,7 @@ const LoginForm = () => {
       console.log(result.user)
       navigate(`${location.state ? location.state : "/"}`);
     })
-    .then(error=>{
+    .catch(error=>{
       console.log(error)
     })
   }
