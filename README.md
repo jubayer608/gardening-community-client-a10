@@ -1,6 +1,6 @@
 # 🌿 BaganBondhu - Gardening Community Platform
 
-Live Site: [https://your-live-site-url.netlify.app](https://your-live-site-url.netlify.app)
+Live Site: [https://my-garden-app-e56e9.web.app](https://your-live-site-url.netlify.app)
 
 ---
 
@@ -36,7 +36,7 @@ Live Site: [https://your-live-site-url.netlify.app](https://your-live-site-url.n
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/baganbondhu.git
+git clone https://github.com/Programming-Hero-Web-Course4/b11a10-client-side-jubayer608.git
 
 # Go into the project directory
 cd baganbondhu
