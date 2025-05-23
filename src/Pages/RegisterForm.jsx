@@ -92,6 +92,7 @@ const RegisterForm = () => {
             <label className="text-sm text-gray-700">Name</label>
             <input
               type="text"
+              required
               name="name"
               placeholder="Your full name"
               className="w-full mt-1 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-400"
@@ -103,6 +104,7 @@ const RegisterForm = () => {
             <input
               type="text"
               name="photo"
+              required
               placeholder="Link to your profile photo"
               className="w-full mt-1 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-400"
             />
@@ -112,6 +114,7 @@ const RegisterForm = () => {
             <input
               type="email"
               name="email"
+              required
               placeholder="you@example.com"
               className="w-full mt-1 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-400"
             />
@@ -121,6 +124,7 @@ const RegisterForm = () => {
             <input
               type="password"
               name="password"
+              required
               placeholder="••••••••"
               className="w-full mt-1 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-400"
             />

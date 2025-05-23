@@ -1,5 +1,7 @@
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
+import Loading from "./Loading";
+
 
 const TipDetails = () => {
   const { id } = useParams();
@@ -25,7 +27,7 @@ const TipDetails = () => {
       });
   };
 
-  if (!tip) return <div className="text-center py-10">Loading...</div>;
+  if (!tip) return <div className="text-center py-10"><Loading></Loading></div>;
   return (
     <div className="max-w-4xl mx-auto p-6 font-sans bg-white shadow rounded mt-10">
       <img src={tip.image} alt={tip.title} className="w-full h-96 overflow-hidden rounded mb-6" />

@@ -22,7 +22,7 @@ const FeaturedGardeners = () => {
     <section className="py-12 px-4 bg-green-50 font-sans">
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-green-800 mb-6">
-          🌿 Featured Gardeners
+           Featured Gardeners
         </h2>
         <p className="text-green-700 mb-10 max-w-xl mx-auto">
           Meet some of our most active gardeners around Bangladesh sharing knowledge and growing greener communities.

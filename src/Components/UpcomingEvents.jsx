@@ -19,7 +19,7 @@ const UpcomingEvents = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          🌼 Upcoming Events
+           Upcoming Events
         </motion.h2>
 
         <div className="space-y-6">

@@ -8,7 +8,7 @@ const MyTips = () => {
   const [myTips, setMyTips] = useState([]);
   const navigate = useNavigate();
 
-  useEffect(() => {
+  useEffect(() => { 
     if (user?.email) {
       fetch(`https://gardening-community-server-flax.vercel.app/tips/by-user?email=${user.email}`)
         .then((res) => res.json())

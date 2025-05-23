@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 import Swal from "sweetalert2";
+import Loading from "./Loading";
 
 const UpdateTip = () => {
   const { user } = useContext(AuthContext);
@@ -51,7 +52,7 @@ const UpdateTip = () => {
       });
   };
 
-  if (!tipData) return <p className="text-center mt-10">Loading...</p>;
+  if (!tipData) return <p className="text-center mt-10"><Loading></Loading></p>;
 
   return (
     <section className="max-w-2xl mx-auto p-6">

@@ -19,7 +19,7 @@ const [tips, setTips] = useState([]);
   return (
     <section className="py-12 bg-green-50">
       <div className="max-w-7xl mx-auto px-4 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-green-800 mb-8">🔥 Top Trending Tips</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-green-800 mb-8"> Top Trending Tips</h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {tips.map((tip, index) => (

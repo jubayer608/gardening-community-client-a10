@@ -6,13 +6,13 @@ import PrivateRoute from "../provider/PrivateRoute";
 import ShareTip from "../Pages/ShareTip";
 import MyTips from "../Pages/MyTips";
 import ExploreGardeners from "../Pages/ExploreGardeners";
-import Loading from "../Pages/Loading";
 import NotFound from "../Pages/NotFound";
 import BrowseTips from "../Pages/BrowseTips";
 import TipDetails from "../Pages/TipDetails";
 import UpdateTip from "../Pages/UpdateTip";
 import LoginForm from "../Pages/LoginForm";
 import RegisterForm from "../Pages/RegisterForm";
+import Loading from "../Pages/Loading";
 
 const router = createBrowserRouter([
   {

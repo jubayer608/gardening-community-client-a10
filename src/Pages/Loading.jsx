@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Lottie from "lottie-react";
 
-const Loader = () => {
+const Loading = () => {
   const [animationData, setAnimationData] = useState(null);
 
   useEffect(() => {
@@ -21,4 +21,4 @@ const Loader = () => {
   );
 };
 
-export default Loader;
+export default Loading;

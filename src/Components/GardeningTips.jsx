@@ -25,7 +25,7 @@ const GardeningTips = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          🌱 Gardening Tips
+           Gardening Tips
         </motion.h2>
 
         <div className="grid md:grid-cols-3 gap-6 text-left">
