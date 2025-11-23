@@ -54,16 +54,16 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="min-h-screen flex bg-green-50 items-center justify-center p-4">
-      <div className="max-w-5xl w-full bg-white rounded-xl shadow-lg overflow-hidden grid grid-cols-1 md:grid-cols-2">
+    <div className="min-h-screen flex bg-theme-primary items-center justify-center p-4">
+      <div className="max-w-5xl w-full bg-theme-secondary border border-theme rounded-xl shadow-lg overflow-hidden grid grid-cols-1 md:grid-cols-2">
         <div className="p-8">
-          <h2 className="text-3xl font-bold text-green-700 mb-2">
+          <h2 className="text-3xl font-bold text-primary-700 dark:text-primary-400 mb-2">
             Welcome back
           </h2>
-          <p className="text-sm text-gray-600 mb-6">
-            Start your gardening journey. Don’t have an account?{" "}
+          <p className="text-sm text-theme-secondary mb-6">
+            Start your gardening journey. Don't have an account?{" "}
             <Link
-              className="text-green-700 hover:underline font-medium"
+              className="text-primary-600 dark:text-primary-400 hover:underline font-medium"
               to="/auth/register"
             >
               Register
@@ -72,25 +72,25 @@ const LoginForm = () => {
 
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700">
+              <label className="block text-sm font-medium text-theme-primary">
                 Email
               </label>
               <input
                 type="email"
                 name="email"
-                className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-400"
+                className="w-full mt-1 px-4 py-2 bg-theme-primary border border-theme rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 text-theme-primary"
                 placeholder="you@example.com"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700">
+              <label className="block text-sm font-medium text-theme-primary">
                 Password
               </label>
               <input
                 type="password"
                 name="password"
-                className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-400"
+                className="w-full mt-1 px-4 py-2 bg-theme-primary border border-theme rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 text-theme-primary"
                 placeholder="••••••••"
               />
             </div>
@@ -99,13 +99,13 @@ const LoginForm = () => {
               <label className="flex items-center">
                 <input
                   type="checkbox"
-                  className="form-checkbox text-green-600"
+                  className="form-checkbox text-primary-600"
                 />
-                <span className="ml-2 text-sm text-gray-600">Remember me</span>
+                <span className="ml-2 text-sm text-theme-secondary">Remember me</span>
               </label>
               <a
                 href="/forgot-password"
-                className="text-sm text-green-600 hover:underline"
+                className="text-sm text-primary-600 dark:text-primary-400 hover:underline"
               >
                 Forgot password?
               </a>
@@ -113,35 +113,35 @@ const LoginForm = () => {
 
             <button
               type="submit"
-              className="w-full bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 transition"
+              className="w-full bg-primary-600 text-white py-2 px-4 rounded-md hover:bg-primary-700 transition"
             >
               Sign in to your account
             </button>
           </form>
 
           {error && (
-            <p className="text-red-600 mt-2 text-sm text-center">{error}</p>
+            <p className="text-red-600 dark:text-red-400 mt-2 text-sm text-center">{error}</p>
           )}
 
-          <div className="my-4 text-center text-sm text-gray-500">or</div>
+          <div className="my-4 text-center text-sm text-theme-secondary">or</div>
 
           <div className="space-y-2">
             <button
               onClick={handleGoogleLogin}
-              className="w-full flex items-center justify-center gap-2 border border-gray-300 py-2 rounded-md hover:bg-gray-100"
+              className="w-full flex items-center justify-center gap-2 border border-theme bg-theme-primary py-2 rounded-md hover:bg-theme-tertiary text-theme-primary transition"
             >
               <FcGoogle className="text-xl" /> Sign in with Google
             </button>
-            <button className="w-full flex items-center justify-center gap-2 border border-gray-300 py-2 rounded-md hover:bg-gray-100 text-green-700">
+            <button className="w-full flex items-center justify-center gap-2 border border-theme bg-theme-primary py-2 rounded-md hover:bg-theme-tertiary text-primary-600 dark:text-primary-400 transition">
               <FaFacebook className="text-xl" /> Sign in with Facebook
             </button>
           </div>
         </div>
-        <div className="hidden md:block">
+        <div className="hidden md:block bg-theme-tertiary">
           <img
             src="https://i.ibb.co/xqh5L8kW/6343845.jpg"
             alt="Login Visual"
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover opacity-90"
           />
         </div>
       </div>

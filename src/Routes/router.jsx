@@ -13,6 +13,8 @@ import UpdateTip from "../Pages/UpdateTip";
 import LoginForm from "../Pages/LoginForm";
 import RegisterForm from "../Pages/RegisterForm";
 import Loading from "../Pages/Loading";
+import About from "../Pages/About";
+import Blog from "../Pages/Blog";
 
 const router = createBrowserRouter([
   {
@@ -53,6 +55,14 @@ const router = createBrowserRouter([
       {
         path:"/update-tip/:id",
         element:<PrivateRoute><UpdateTip></UpdateTip></PrivateRoute>
+      },
+      {
+        path: "/about",
+        Component: About,
+      },
+      {
+        path: "/blog",
+        Component: Blog,
       }
     ],
   },

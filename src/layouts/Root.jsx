@@ -5,17 +5,16 @@ import Footer from '../Components/Footer';
 
 const Root = () => {
     return (
-        <div>
-            <header >
+        <div className="min-h-screen bg-theme-primary">
+            <header className="sticky top-0 z-50">
                 <Navbar></Navbar>
             </header>
-            <main>
+            <main className="min-h-[calc(100vh-200px)] pt-16 md:pt-20">
                   <Outlet></Outlet>
             </main>
             <footer>
                 <Footer></Footer>
             </footer>
-            
         </div>
     );
 };

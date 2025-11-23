@@ -11,10 +11,10 @@ const UpcomingEvents = () => {
   }, []);
 
   return (
-    <section className="bg-white py-12 px-6">
+    <section className="bg-theme-primary py-12 px-6">
       <div className="max-w-4xl mx-auto text-center">
         <motion.h2
-          className="text-3xl md:text-4xl font-bold text-green-800 mb-8"
+          className="text-3xl md:text-4xl font-bold text-primary-700 dark:text-primary-400 mb-8"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -26,13 +26,13 @@ const UpcomingEvents = () => {
           {events.map((event, index) => (
             <motion.div
               key={event.id}
-              className="border-b pb-4"
+              className="bg-theme-secondary border border-theme rounded-lg p-6 hover:shadow-lg transition"
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: index * 0.2 }}
             >
-              <h3 className="text-xl font-semibold text-green-700">{event.title}</h3>
-              <p className="text-gray-600">{event.date} — {event.location}</p>
+              <h3 className="text-xl font-semibold text-theme-primary mb-2">{event.title}</h3>
+              <p className="text-theme-secondary">{event.date} — {event.location}</p>
             </motion.div>
           ))}
         </div>

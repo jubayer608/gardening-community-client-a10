@@ -42,9 +42,9 @@ const Hero = () => {
               className="relative w-full h-full bg-cover bg-center"
               style={{ backgroundImage: `url(${slide.image})` }}
             >  
-              <div className="absolute inset-0  bg-opacity-50 flex items-center justify-center px-4">
-                <div className="bg-green-100/30 backdrop-blur-sm p-6 rounded-lg text-center  max-w-xl mx-auto">
-                  <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
+              <div className="absolute inset-0 bg-black/40 dark:bg-black/60 flex items-center justify-center px-4">
+                <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-md p-6 rounded-xl text-center max-w-xl mx-auto shadow-2xl border border-white/20">
+                  <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight text-primary-700 dark:text-primary-400">
                     <Typewriter
                       words={[
                         'Grow Together',
@@ -61,7 +61,7 @@ const Hero = () => {
                   </h2>
                   <a
                     href={slide.link}
-                    className="inline-block mt-4 bg-green-600 hover:bg-green-700 px-6 py-3 rounded text-lg transition"
+                    className="inline-block mt-4 bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-lg text-lg font-semibold transition shadow-lg hover:shadow-xl transform hover:scale-105"
                   >
                     {slide.buttonText}
                   </a>
