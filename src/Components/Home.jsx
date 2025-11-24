@@ -13,37 +13,43 @@ import JoinCommunityCTA from './JoinCommunityCTA';
 
 const Home = () => {
     return (
-        <div className='w-11/12 mx-auto my-10 bg-theme-primary'>
-            <Hero></Hero>
-            <div className='my-10'>
-                <CommunityStats></CommunityStats>
-            </div>
-            <div className='my-10'>
-                <FeaturedGardeners></FeaturedGardeners>
-            </div>
-            <div className='my-10'>
-               <TopTrendingTips></TopTrendingTips>
-            </div>
-            <div className='my-10'>
-                <PlantCategories></PlantCategories>
-            </div>
-            <div className='my-10'>
-                <PopularPlants></PopularPlants>
-            </div>
-            <div className='my-10'>
-                <SeasonalPlantingGuide></SeasonalPlantingGuide>
-            </div>
-            <div className='my-10'>
-                 <GardeningTips></GardeningTips>
-            </div>
-            <div className='my-10'>
-                <QuickTipsCarousel></QuickTipsCarousel>
-            </div>
-            <div className='my-10'>
-                <SuccessStories></SuccessStories>
-            </div>
-            <div className='my-10'>
-                <JoinCommunityCTA></JoinCommunityCTA>
+        <div className="w-full overflow-x-hidden bg-theme-primary">
+            
+            {/* 🟢 Hero Section Full Width */}
+            <Hero />
+
+            {/* 🟢 Rest of content inside centered container */}
+            <div className="w-11/12 mx-auto my-10">
+                <div className='my-10'>
+                    <CommunityStats />
+                </div>
+                <div className='my-10'>
+                    <FeaturedGardeners />
+                </div>
+                <div className='my-10'>
+                    <TopTrendingTips />
+                </div>
+                <div className='my-10'>
+                    <PlantCategories />
+                </div>
+                <div className='my-10'>
+                    <PopularPlants />
+                </div>
+                <div className='my-10'>
+                    <SeasonalPlantingGuide />
+                </div>
+                <div className='my-10'>
+                    <GardeningTips />
+                </div>
+                <div className='my-10'>
+                    <QuickTipsCarousel />
+                </div>
+                <div className='my-10'>
+                    <SuccessStories />
+                </div>
+                <div className='my-10'>
+                    <JoinCommunityCTA />
+                </div>
             </div>
         </div>
     );
